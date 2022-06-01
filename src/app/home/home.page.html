@@ -1,0 +1,81 @@
+
+  <ion-header class="Head">
+
+    <ion-toolbar class="night">
+
+      <div class="Title">
+        <h2>To-Do Reminder</h2>
+        <h2>To-Do Reminder</h2>
+      </div>
+      <div>
+        <p class="date">
+          {{dateTime | date: 'fullDate'}}
+        </p>
+        <p class="time">
+          {{dateTime | date: 'longTime'}}
+        </p>
+      </div>
+      <ion-button class="add-button" (click)="openModal()"><span>Add Reminder</span></ion-button>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+      <div class="shooting_star"></div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content id="main">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6">
+          <ion-list>
+            <ion-list-header style="font-size: 150%; font-family:'Copperplate Gothic'; color: yellow;">TODAY</ion-list-header>
+            <ion-item button (click)="openModalEvent(reminder2, indexofelement)" *ngFor="let reminder2 of reminder_Today;let indexofelement=index;">
+              Event: {{reminder2.split("#@#")[0]}}
+              <br>
+              <br>
+              <br>
+              <ion-button (click)="removeEvent(reminder2)" color="warning">DELETE</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6">
+          <ion-list>
+            <ion-list-header style="font-size: 150%; font-family:'Copperplate Gothic'; color: lightskyblue;">ALL</ion-list-header>
+            <ion-item button (click)="openModalEvent(reminder, indexofelement)" *ngFor="let reminder of reminders;let indexofelement=index;">
+              Event: {{reminder.split("#@#")[0]}}
+              <br>
+              <br>
+              <br>
+              <ion-button (click)="removeEvent(reminder)" color="warning">DELETE</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size-xs="12" size-md="6">
+          <ion-list>
+            <ion-list-header style="font-size: 150%; font-family:'Copperplate Gothic'; color: yellowgreen">Scheduled</ion-list-header>
+            <ion-item button (click)="openModalEvent(reminder1, indexofelement)" *ngFor="let reminder1 of reminder_scheduled;let indexofelement=index;">
+              Event: {{reminder1.split("#@#")[0]}}
+              <br>
+              <ion-button class="delete" (click)="removeEvent(reminder1)" color="warning">DELETE</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
