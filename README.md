@@ -1,5 +1,6 @@
 # To-Do-Reminder
 Simple web application that allows users to add and remind them about an event
+Inspired by Apple's Reminders application
 
 Source:
 - Angular + Ionic Framework
